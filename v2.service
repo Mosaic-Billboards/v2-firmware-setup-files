@@ -1,0 +1,16 @@
+[Unit]
+Description=v2 Firmware
+After=graphical.target
+
+[Service]
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+Environment=PYTHONUNBUFFERED=x
+ExecStart=/bin/bash -c '/usr/bin/sudo /usr/bin/python3 /home/v2-firmware/v2.py > /home/v2-firmware/v2.log 2>&1'
+Restart=always
+RestartSec=10s
+KillMode=process
+TimeoutSec=infinity
+
+[Install]
+WantedBy=graphical.target
