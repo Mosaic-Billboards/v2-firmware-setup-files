@@ -3,10 +3,11 @@ Description=v2 Firmware
 After=graphical.target
 
 [Service]
+Environment=v2m1-001
 Environment=DISPLAY=:0
 Environment=XAUTHORITY=/home/pi/.Xauthority
 Environment=PYTHONUNBUFFERED=x
-ExecStart=/bin/bash -c '/usr/bin/sudo /usr/bin/python3 /home/v2-firmware/v2.py > /home/v2-firmware/v2.log 2>&1'
+ExecStart=/usr/bin/sudo -E /usr/bin/python3 /home/v2-firmware/v2.py
 Restart=always
 RestartSec=10s
 KillMode=process
