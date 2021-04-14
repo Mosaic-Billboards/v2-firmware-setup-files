@@ -1,10 +1,6 @@
 BILLBOARD_ID="v2m1_001"
-
-# passwd
-# cd /
-# sudo wget https://raw.githubusercontent.com/Mosaic-Billboards/v2-firmware-setup-files/master/v2-setup.sh
-# sudo chmod +x v2-setup.sh
-# sudo bash v2-setup.sh
+WINDOW_WIDTH=1200
+WINDOW_HEIGHT=1920
 
 cd /
 echo "Running v2 Setup..."
@@ -12,6 +8,8 @@ sleep 1
 
 # set BILLBOARD_ID as environment variable
 echo "BILLBOARD_ID="$BILLBOARD_ID"" >> /etc/environment
+echo "WINDOW_WIDTH="$WINDOW_WIDTH"" >> /etc/environment
+echo "WINDOW_HEIGHT="$WINDOW_HEIGHT"" >> /etc/environment
 
 # raspi-config settings
 sudo raspi-config nonint do_hostname "$BILLBOARD_ID"
